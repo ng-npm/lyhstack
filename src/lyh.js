@@ -1,5 +1,4 @@
-const { fstat } = require("fs"),
-      fs = require( "fs" );
+const fs = require( "fs" );
 
 
 const lyh = Object.freeze( [
