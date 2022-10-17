@@ -3,12 +3,12 @@ const fs = require( "fs" );
 
 const lyh = Object.freeze( [
 	print = function( l, y, h ) {
-        h ? console.log( l, y, h ) : !h && y ? console.log( l, y ) : console.log( l );
+		h ? console.log( l, y, h ) : !h && y ? console.log( l, y ) : console.log( l );
 	},
 	log = function( l ) {
-        console.table( l );
+		console.table( l );
 	},
-	inverse = function( v ) {
+	inverso = function( v ) {
 		return v.split( "" ).reverse().join( "" );
 	},
 	range = function( start, stop, step ) {
@@ -32,15 +32,21 @@ const lyh = Object.freeze( [
 
 		return result;
 	},
-    save = ( l, y ) => {
-        let h = JSON.stringify( y );
-        fs.writeFileSync( l, h );
-    },
-    append = ( l, y ) => {
-        let h = JSON.stringify( y );
-        fs.appendFileSync( l, h );
-    },
+	save = ( l, y ) => {
+		let h = JSON.stringify( y );
+		fs.writeFileSync( l, h );
+	},
+	append = ( l, y ) => {
+		let h = JSON.stringify( y );
+		fs.appendFileSync( l, h );
+	},
 ] );
+
+Object.defineProperty( String.prototype, "inverse", {
+	value: function() {
+		return this.split( "" ).reverse().join( "" );
+	}
+} );
 
 
 
