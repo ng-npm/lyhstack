@@ -45,7 +45,13 @@ const lyh = Object.freeze( [
 Object.defineProperty( String.prototype, "inverse", {
 	value: function() {
 		return this.split( "" ).reverse().join( "" );
-	}
+	}, enumerable: false
+} );
+
+Object.defineProperty( String.prototype, "capitalize", {
+	value: function() {
+		return this.charAt( 0 ).toUpperCase() + this.slice( 1 );
+	}, enumerable: false
 } );
 
 

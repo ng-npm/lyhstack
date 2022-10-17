@@ -8,7 +8,7 @@
 Object.defineProperty( String.prototype, "invers", {
 	value: function() {
 		return this.split( "" ).reverse().join( "" );
-	}
+	}, enumerable: false
 } );
 /* 
 console.log(
